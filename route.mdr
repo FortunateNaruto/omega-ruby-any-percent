@@ -123,7 +123,7 @@ Immediately after entering Rusturf Tunnel:
   - Teach Echoed Voice over Tackle (slot 4).
  :::
 
-:::::::trainer[Team Aqua Grunt]
+:::::::trainer[Team Magma Grunt]
   :::::pokemon[Poochyena]{info="Faster before Rock Tomb hit at 15+ Speed (20+ / 4+ / 0+)" infoColor=blue}
    :::if{source="Mudkip" condition="spatk=(24+/ 9+ / #) && speed=(24+/ 12+ / 4+)"}
      - Water Gun x3
@@ -893,7 +893,7 @@ Bike to the Harbor.
   :::
 :::::
 
-:::::::trainer[Team Aqua Grunt]
+:::::::trainer[Team Magma Grunt]
   :::::pokemon[Numel]
     - Surf
   :::::

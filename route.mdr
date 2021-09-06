@@ -422,11 +422,10 @@ Puzzle (room 2): Top-right blue switch, red switch, top-right blue switch.
 :::::trainer[Leader Wattson]
   :::pokemon[Magnemite]
     - Water Gun
-  :::if{source="Mudkip" condition="speed(20+/2+/#"}
+  :::if{source="Mudkip" condition="speed=(20-/2+/0+)"}
     - X Speed
   :::  
-    - Bulldoze
-  :::
+  - Bulldoze
   :::pokemon[Magneton]
     - Bulldoze
   :::
@@ -771,25 +770,36 @@ Heal to full.
   :::pokemon[Slugma]
     - Surf
   :::
-  :::pokemon[Grovyle]{info="Faster at 68+ Speed (17+ / 0+ / 0+)" infoColor=blue}
-    - Dragon Breath
-    - Dragon Breath or Mist Ball
-
-    ::damage[Grovyle's Pursuit]{source="Latias" offensive=false movePower=40 level=30 evs=0 opponentLevel=33 opponentStat=47 effectiveness=2}
-
+  :::pokemon[Grovyle]{info="Need 2 X-SpAtks for winona Faster at 68+ Speed (17+ / 0+ / 0+)" infoColor=blue}
+  :::if{source="Latios" condition="spatk=(x/24+/#)"}
+    - X-Sp. Atk
+    - Luster Purge (+ Dragon Breath)
   :::
-  :::pokemon[Wailmer]
+  :::if{source="Latios" condition="spatk=~(x/24+/#)"}
+   
     - Dragon Breath
-    - Dragon Breath or Mist Ball
+    - If still green HP: Luster Purge
+    - Otherwise: Dragon Breath again
+  :::
+
+   ::damage[Grovyle's Pursuit]{source="Latios" offensive=false movePower=40 level=30 evs=0 opponentLevel=33 opponentStat=47 effectiveness=2}
+
+  :::pokemon[Wailmer]
+    - If +1: Luster Purge
+
+    - Dragon Breath
+    - If still green HP: Luster Purge
+    - Otherwise: Dragon Breath again
   :::
 :::::
 
-![Route 120 movement](route-120-movement.gif)
+Say Yes to Steven
+Run from first Kecleon. After Kecleon cutscenes, go to gym
 
-Get TM86 Grass Knot behind the gym.
 
-- Heal to full if you took substantial damage on Brendan.
-- Move the Mystic Water from Castform to Latias if you have not done so yet.
+- Heal to full
+- Teach Fly to Latios over Psycho Shift (Slot 4) 
+- Drag Mystic Water to Latios
 
 Gym puzzle:
 - Left
@@ -803,326 +813,235 @@ Gym puzzle:
     - X Sp. Attack x2
     - _If not going for the +2 ranges:_
       - X Sp. Attack
+    - Heal as needed  
     - Surf
 
-    ::damage[Swellow's Aerial Ace]{source="Latias" offensive=false movePower=60 stab=true level=31 evs=0 opponentLevel=33 opponentStat=61}
+    ::damage[Swellow's Aerial Ace]{source="Latios" offensive=false movePower=60 stab=true level=31 evs=0 opponentLevel=33 opponentStat=61}
   :::
   :::pokemon[Altaria]
     - Dragon Breath
-
-    ::damage[+2 Dragon Breath vs Altaria]{source="Latias" special=true movePower=60 stab=true level=31 evs=0 opponentStat=70 effectiveness=2 healthThreshold=97 combatStages=2 theme=error}
   :::
   :::pokemon[Skarmory]
-    - Surf
-
-    ::damage[+2 Surf vs Skarmory]{source="Latias" special=true movePower=90 level=31 evs=0 opponentStat=56 healthThreshold=85 combatStages=2 otherPowerModifier=1.2 theme=error}
+    - Surf (x2)
+    - Do not teach Recover.
   :::
   :::pokemon[Pelipper]
-    - Mist Ball
+    - Luster Purge (x2)
 
-    ::damage[+2 Mist Ball vs Pelliper]{source="Latias" special=true movePower=70 stab=true level=32 evs=1 opponentStat=56 healthThreshold=82 combatStages=2 theme=error}
+    ::damage[+2 Luster Purge vs Pelliper]{source="Latios" special=true movePower=70 stab=true level=32 evs=1 opponentStat=56 healthThreshold=82 combatStages=2 theme=error}
 
-    ::damage[+3 Mist Ball vs Pelliper]{source="Latias" special=true movePower=70 stab=true level=32 evs=1 opponentStat=56 healthThreshold=82 combatStages=3 theme=error}
+    ::damage[+3 Luster Purge vs Pelliper]{source="Latios" special=true movePower=70 stab=true level=32 evs=1 opponentStat=56 healthThreshold=82 combatStages=3 theme=error}
   :::
 :::::
-
+Grab Persim Berries (left) Can skip w/ 2 left (Need one for Wallace and Sidney)
 Get the free heal before surfing to Mt. Pyre.
 
-:::if{source="Latias" condition="spatk=(21- / x / x)" theme=warning}
-  Get the Rare Candy by the lake ([https://www.youtube.com/watch?v=UofDUoCr2eE](https://www.youtube.com/watch?v=UofDUoCr2eE))
-:::
-
-![Mt. Pyre movement pt. 1](mt-pyre-movement-1.gif)
-
-![Mt. Pyre movement pt. 2](mt-pyre-movement-2.gif)
-
-![Mt. Pyre movement pt. 3](mt-pyre-movement-3.gif)
-
-:::::trainer[Team Aqua Grunt]
-  :::pokemon[Grimer]
-    - Mist Ball
-    - Dragon Breath
-
-    ::damage[+0 Mist Ball vs Grimer]{source="Latias" special=true movePower=70 stab=true level=32 evs=1 opponentStat=45 healthThreshold=103 effectiveness=2 theme=error}
+:::::trainer[Team Magma Grunt]
+  :::pokemon[Koffing]
+    - Luster Purge
   :::
 :::::
 
-:::::trainer[Team Aqua Grunt]
-  :::pokemon[Carvanha]
-    - Dragon Breath
+:::::trainer[Team Magma Grunt]
+  :::pokemon[Numel]
+    - Surf
   :::
   :::pokemon[Mightyena]
-    - Surf x2
+    - Dragon Breath
+    - If still green HP: Surf
+    - Otherwise: Dragon Breath
   :::
 :::::
 
-If in yellow health:
-  - Use the Rare Candy if you picked it up.
-  - Heal to full.
+If you took Damage 
+  -Heal to full
 
-:::::trainer[Team Aqua Grunt]
+:::::trainer[Team Magma Grunt]
   :::pokemon[Mightyena]
-    - Surf x2 (or Surf + Dragon Breath)
+    - Dragon Breath
+    - If still green HP: Surf
+    - Otherwise: Dragon Breath
   :::
   :::pokemon[Golbat]
-    - Mist Ball
-    - Dragon Breath
+    - Luster Purge (+ Dragon Breath)
   :::
 :::::
 
-- Heal to full.
-- Use the Rare Candy if you picked it up and haven't used it yet.
-:::if{source="Latias" condition="speed=(0+ / 27- / 6-)"}
-- _If Latias is slower or speed tied with Sharpedo (Lv. 33: 0+ / 27- / 6-) (Lv. 34: 0+ / 20- / x)_:
-  - Move Marshtomp to the front of the party.
-:::
-:::if{source="Latias" condition="speed=~(0+ / 27- / 6-)"}
-- _If Latias is faster than Sharpedo (Lv. 33: x / 28+ / 7+) (Lv. 34: x / 21+ / 0+)_:
-  - Teach Fly over Dragon Breath (slot 2). :info[Unless you don't trust the Surf range]{color=gray}
-:::
-- Teach Grass Knot over Psycho Shift (slot 4).
-- Don't heal Poison to avoid getting Frozen by Ice Fang (unless your Defense is really bad).
-
-:::::::trainer[Aqua Admin Matt]
-  :::::pokemon[Sharpedo]{info="with Marshtomp in slot 1"}
-    - Bulldoze
-    - Switch to Latias :info[_Even if Marshtomp didn't faint_]{color=gray}
-    - Grass Knot :info[_Or Dragon Breath if you Bulldoze'd twice_]{color=gray}
-  :::::
-  :::::pokemon[Sharpedo]{info="with Latias in slot 1"}
-    - Dragon Breath + Grass Knot
-    - _OR:_ Grass Knot + Surf
-
-    :::if{source="Latias" condition="spatk=(0 / x / x)" theme=error}
-      **Dragon Breath + Grass Knot is a 90.6% range at Lv. 34.**
-    :::
-    :::if{source="Latias" condition="spatk=(1-9 / x / x)" theme=error}
-      **Dragon Breath + Grass Knot is a 95.3% range at Lv. 34.**
-    :::
-    :::if{source="Latias" condition="spatk=(10+ / 0+ / 0+)" theme=error}
-      **Dragon Breath + Grass Knot is a 100% range at Lv. 34.**
-    :::
-    :::if{source="Latias" condition="spatk=(10+ / x / x)" theme=error}
-      **Grass Knot + Surf is a 3.9% range at Lv. 33.**
-    :::
-    :::if{source="Latias" condition="spatk=(x / 11-13 / x)" theme=error}
-      **Grass Knot + Surf is a 64.8% range at Lv. 33.**
-    :::
-    :::if{source="Latias" condition="spatk=(x / 14-16 / x)" theme=error}
-      **Grass Knot + Surf is a 68.8% range at Lv. 33.**
-    :::
-    :::if{source="Latias" condition="spatk=(x / 17-22 / 0-1)" theme=error}
-      **Grass Knot + Surf is a 82% range at Lv. 33.**
-    :::
-    :::if{source="Latias" condition="spatk=(x / 23-25 / 2-4)" theme=error}
-      **Grass Knot + Surf is a 94.1% range at Lv. 33.**
-    :::
-    :::if{source="Latias" condition="spatk=(x / 26-28 / 5-7)" theme=error}
-      **Grass Knot + Surf is a 95.3% range at Lv. 33.**
-    :::
-    :::if{source="Latias" condition="spatk=(x / 29+ / 8+)" theme=error}
-      **Grass Knot + Surf is a 100% range at Lv. 33.**
-    :::
+:::::::trainer[Magma Admin Courtney]
+  :::::pokemon[Camerupt]{info="Remember HP after"}
+    - Surf
   :::::
 :::::::
 
-![Matt 2 Bulldoze + Grass Knot range table](matt-2-ranges.png)
-
-:::if{source="Latias" condition="(speed=(0+ / 25- / 4-) || speed=(0+ / 25- / 11+)) && spatk=(0+ / 20- / 14+)" theme="info"}
-  Get the Rare Candy at the tombstone if one of these conditions is met:
-  - Latias has fainted.
-  - You consider your Sp. Attack too low.
-
-:::
-
-:::if{source="Latias" condition="speed=(x / 26+ / 5-10) || spatk=(x / 21+ / 13-)" theme="info"}
-  Get the Rare Candy at the tombstone.
-
-:::
-
-- _If Latias is fainted:_
-  - Use the Rare Candy.
-- Heal to full. :info[Skip this if Marshtomp is fainted or you're worried about PP]{color=gray}
-- Move Latias back to the front of your party.
-- Teach Fly over Dragon Breath if you have not done so already.
+- Heal to full-ish
 - Fly to Slateport City.
-- PC heal if Marshtomp is fainted or you're worried about PP.
 
 ### Slateport Shopping.
 > #### Buy (Top):
-> - 7 X Speed
-> - 7 X Sp. Attack (>^)
+> - 11 X-Speeds
+> - 6 X Sp. Attack (>^)
 > - 1 Guard Spec (^^^)
 > #### Buy (Botom):
 > - 11 Max Repel (^^)
-> - 2 Revive (<^^^)
-> - MAX Full Restore(^)
+> - MAX Full Restore(<^^^^)
 
 Bike to the Harbor.
 
-:::::trainer[Team Aqua Grunt]
+:::::trainer[Team Magma Grunt]
   :::pokemon[Mightyena]
-    - Surf x2
+    -  Dragon Breath/Surf x2 (Dragon Breath)
   :::
 :::::
 
 :::::::trainer[Team Aqua Grunt]
-  :::::pokemon[Carvanha]
-    :::if{source="Latias" condition="spatk=~(x / x / 19+)"}
-      - Grass Knot
-    :::
-    :::if{source="Latias" condition="spatk=(x / x / 19+)"}
-      - Surf
-
-      ::damage[+0 Surf vs Carvanha at Lv. 34]{source="Latias" special=true movePower=90 level=34 evs=1 opponentStat=18 healthThreshold=74 effectiveness=0.5 otherPowerModifier=1.2 theme=error}
-    :::
+  :::::pokemon[Numel]
+    - Surf
   :::::
   :::::pokemon[Golbat]
-    - Mist Ball
-    - Surf
-
-    ::damage[+0 Mist Ball vs Golbat at Lv. 34]{source="Latias" special=true movePower=70 stab=true level=34 evs=1 opponentStat=56 healthThreshold=95 effectiveness=2 theme=error}
+    -  Luster Purge (+ Dragon Breath)
   :::::
 :::::::
 
-- Heal to full if you took more than just Rough Skin damage.
-- Use a Rare Candy if you picked up both the lake Candy and the tombstone Candy.
+- Heal to full if took damage
 
 :::::::trainer[Brendan 4]{info="nothing but pain"}
-  :::::pokemon[Swellow]{info="Faster at 98+ Speed (Lv. 34: x / x / 28+) (Lv. 35: x / x / 21+)" infoColor=blue}
+  :::::pokemon[Swellow]{info="Faster at 98+ Speed (Lv. 34: x / x / 28+)" infoColor=blue}
     - X Sp. Attack
-    :::if{source="Latias" condition="speed=(31- / 25- / 1-)"}
-    - _If 88- Speed (Lv. 34: 31- / 25- / 1-) (Lv. 35: 31- / 17- / x):_
+    :::if{source="Latios" condition="spatk=(31- / 9- / x)"}
+      - X Sp.Atk again
+    :::
+    :::if{source="Latios" condition="speed=(31- / 25- / 1-)"}
       - X Speed
     :::
-    - Surf
-
-    ::damage[+1 Surf vs Swellow at Lv. 34]{source="Latias" special=true movePower=90 level=34 evs=1 opponentStat=37 healthThreshold=91 combatStages=1 otherPowerModifier=1.2 theme=error}
+    - Dragon Breath
   :::::
-  :::::pokemon[Sceptile]
-    - Fly
-    - Mist Ball
-    - Surf :info[Fly does ~50% damage if you're out of Mist Ball PP]{color=gray}
+  :::::pokemon[Sceptile]{info="Heal Turn 1 if Dual Chop KOs"}
+    - Dragon Breath x2
+    - Consider Luster Purge or Fly turn 2 if Dragon Breath does less than half
+    
+    ::damage[Sceptile's Dual Chop]{source="Latios" offensive=false effectiveness=4 movePower=40 stab=false level=34 opponentLevel=39 opponentStat=78}
 
-    _If Brendan uses Detect on Fly, use Mist Ball then Fly and pray._
-
-    :info[If you die here, Revive on Castform, heal to full, and spam Fly.]{color=red}
   :::::
   :::::pokemon[Magcargo]
     - Surf
   :::::
   :::::pokemon[Wailord]
-    - Grass Knot
-  :::::
+    - Luster Purge
+    - If Amnesia: Luster Purge again
+    - Otherwise: Dragon Breath
+>    :info[Note Surf PP]{color=red}
+   :::::
 :::::::
 
-If you have no Mist Ball PP left, heal to full and use the Elixir.
+Only need 3 Luster Purge/8 or 9 surfs  from here (Dont leppa either if you have this many)
 
-:::::trainer[Team Aqua Grunt]
-  :::pokemon[Golbat]
-    - Mist Ball :info[Can use Surf x2 - 95.3% at 99+ Sp. Atk (x / x / 23-28)]{color=gray}
+If damaged, open your item menu:
+>Heal to full
+
+>(Leppa if needed)
+
+
+:::::trainer[Team Magma Grunt]
+  :::pokemon[Mightyena]
+    - Dragon Breath x2
+    - Consider Surf turn 2 if Dragon Breath does not do half
+> Do not use Surf with exactly 8 PP remaining
+  :::
+:::::
+
+If damaged Heal to full
+
+Go behind the bed and pick up Master Ball.
+- First: Bottom right ball
+- Then: Upper left ball (talk diagonally)
+
+
+:::::trainer[Team Magma Grunt]
+  :::pokemon[Numel]
     - Surf
   :::
 :::::
 
-Heal to full and use the Elixir if took damage from Golbat or you did not do so before.
 
-Go behind the bed and talk to the tree to get the Master Ball.
-
-:::::trainer[Team Aqua Grunt]
-  :::pokemon[Mightyena]
-    - Surf x2
-    - Do not teach Reflect Type
-  :::
-:::::
-
-
-:::::trainer[Team Aqua Horde]
+:::::trainer[Team Magma Horde]
   :::pokemon[Poochyena x5]
     - Surf
   :::
 :::::
 
-- If you have a Rare Candy still, use it now.
-- Heal to full unless you're faster than Sharpedo and are willing to risk the range.
-
-:::::trainer[Aqua Admin Matt]
-  :::pokemon[Sharpedo]{info="Faster at 97+ Speed (Lv. 36: x / x / 11+) (Lv. 37: x / 26+ / 5+)" infoColor=blue}
-    - Grass Knot
+:::::trainer[Magma Admin Courtney]
+  :::pokemon[Camerupt]{info="Take note of Surf PP (need like 2 maybe 3 for TnL, 1 for maxie)" infoColor=blue}
     - Surf
-    - Finish the fight with Bulldoze if Latias is fainted.
-
-    ::damage[+0 Grass Knot vs Sharpedo at Lv. 36]{source="Latias" special=true movePower=80 level=36 evs=1 opponentStat=40 healthThreshold=112 effectiveness=2 theme=error}
-
-    ::damage[+0 Grass Knot vs Sharpedo at Lv. 37]{source="Latias" special=true movePower=80 level=37 evs=1 opponentStat=40 healthThreshold=112 effectiveness=2 theme=error}
   :::
 :::::
 
-Revive Latias if fainted. Heal to full and head to the Mossdeep City gym.
-
-![Mossdeep surfing momement](mossdeep-movement.gif)
+If damaged Heal to full
 
 :::::trainer[Liza & Tate]
-  - Surf
-  - X Sp. Attack
-  - Surf
-  - X Sp. Attack
-  - Surf
+  - Surf/ X Sp. Attack
+  - Surf/ X Sp. Attack
+  - Surf as needed (Need 1 surf for maxie) having only 1 loses a turn
 :::::
 
-- Teach Dive to Marshtomp over Bulldoze (slot 1).
-- Heal Latias to full.
+- Route 128
 
-:::::trainer[Team Aqua Grunt]
+Open your item menu:
+
+- Heal to full
+- Teach Dive to Marshtomp over Mud Shot (slot 2).
+
+:::::trainer[Team Magma Grunt]
   :::pokemon[Mightyena]
-    - Surf x2
+    - Dragon Breath x2
+    > Consider Surf turn 2 if Dragon Breath does not do half
   :::
-  :::pokemon[Muk]
-    - Mist Ball x2 (+ Surf)
+  :::pokemon[Weezing]
+    - Luster Purge (+ Dragon Breath)
   :::
 :::::
 
-- Heal to full if under 75% HP or poisoned.
+- Heal if needed
 
-:::::trainer[Aqua Leader Archie]
+:::::trainer[Magma Leader Maxie]
   :::pokemon[Mightyena]
+   ::damage[Take Down]{source="Latios" offensive=false movePower=90 stab=false level=37 evs=0 opponentLevel=41 opponentStat=78}
+  :::if{source="Latios" condition="speed=(x/27+/4+)"}
+    - Guard Spec
+    - X Sp. Attack x2
+    - Surf (Dragon Breath)
+     - Can Dragon Breath (x2) if only one Surf left
+  :::  
+
+  :::if{source="Latios" condition="speed=~(x/27+/4+)"}
     - Guard Spec
     - X Speed
     - X Sp. Attack x2
-    - _If you're afraid of missing ranges:_
-      - X Sp. Attack
-    - Surf (x2)
-  :::
-  :::pokemon[Muk]
-    - Mist Ball
-    - (Mist Ball/Surf)
+    - Surf (Dragon Breath)
+     - Can Dragon Breath (x2) if only one Surf left
 
-    ::damage[+2 Mist Ball vs Muk at Lv. 38]{source="Latias" special=true movePower=70 stab=true level=38 evs=3 opponentStat=87 healthThreshold=137 effectiveness=2 combatStages=2 theme=error}
 
-    ::damage[+2 Mist Ball vs Muk at Lv. 39]{source="Latias" special=true movePower=70 stab=true level=39 evs=3 opponentStat=87 healthThreshold=137 effectiveness=2 combatStages=2 theme=error}
+
+  :::pokemon[Weezing]
+    -  Luster Purge
   :::
   :::pokemon[Crobat]
-    - Mist Ball
-
-    ::damage[+1 Mist Ball vs Crobat at Lv. 38]{source="Latias" special=true movePower=70 stab=true level=38 evs=3 opponentStat=77 healthThreshold=120 effectiveness=2 combatStages=1 theme=error}
-
-    ::damage[+1 Mist Ball vs Crobat at Lv. 39]{source="Latias" special=true movePower=70 stab=true level=39 evs=3 opponentStat=77 healthThreshold=120 effectiveness=2 combatStages=1 theme=error}
+    - Luster Purge
   :::
-  :::pokemon[Mega Sharpedo]
-    - Grass Knot
+  :::pokemon[Camerupt]
+    - Surf
   :::
 :::::
 
-Catch Kyogre with the Master Ball.
+Catch Groudon with the Master Ball.
 
-- Teach Surf over Body Slam (slot 1).
-- Teach Calm Mind over Aqua Ring (slot 2).
-:::if{source="Kyogre" condition="spatk=~(x / x / 7+)"}
-- Move the Mystic Water from Latias to Kyogre.
-:::
-:::if{source="Kyogre" condition="spatk=(x / x / 7+)"}
-- Equip a Persim Berry on Kyogre (unless you have none left). :info[If you're afraid of missing the range, equip the Msyic Water instead]{color=gray}
-:::
+- Open your Pokémon menu:
+  - Move Groudon to Slot 1
+  - Open Groudon’s Restore menu
+    - Equip Persim Berry
+    - Teach Swords Dance over Lava Plume (Slot 1) 
+    - Teach Smack Down over Rest (Slot 2) 
+    - Teach Overheat over Precipice Blades (slot 4)
+
 
 ![Ice puzzle momement pt. 1](ice-puzzle-1.png)
 
@@ -1131,419 +1050,311 @@ Catch Kyogre with the Master Ball.
 ![Ice puzzle momement pt. 3](ice-puzzle-3.png)
 
 :::::::trainer[Leader Wallace]
-  :::::pokemon[Luvdisc]
-     - Surf
-    ::damage[+0 Surf vs Luvdisc without Mystic Water]{source="Kyogre" special=true movePower=90 stab=true level=45 evs=0 opponentStat=62 healthThreshold=91 effectiveness=0.5 weatherBoosted=true theme=error}
-    
-    ::damage[+0 Surf vs Luvdisc with Mystic Water]{source="Kyogre" special=true movePower=90 stab=true level=45 evs=0 opponentStat=62 healthThreshold=91 effectiveness=0.5 otherPowerModifier=1.2 weatherBoosted=true theme=error}
-  :::::
-  :::::pokemon[Whiscash]
-    - (Full Heal if confused)
-    - Calm Mind x2
-    - Surf
-  :::::
-  :::::pokemon[Sealeo]
-    :::if{source="Kyogre" condition="spatk=(x / x / 5+)"}
-      - _If raining or Mystic Water is equipped:_
-        - Surf
-      - _Otherwise:_
-        - Origin Pulse
-      - 
-    :::
-    :::if{source="Kyogre" condition="spatk=~(x / x / 5+)"}
-      - _If raining:_
-        - Surf
-      - _Otherwise:_
-        - Origin Pulse
-      - 
-  :::::
-  :::::pokemon[Seaking]
-    - _If raining:_
-      - Surf
-    - _Otherwise:_
-      - Origin Pulse
-    -
+  :::::pokemon[Luvdisc]{info="Faster at 100+ Speed (x/x/12+)" infoColor=blue}
+     - Earthquake
   :::::
   :::::pokemon[Milotic]
-    - _If raining:_
-      - Surf
-    - _Otherwise:_
-      - Surf
-      - Surf or Origin Pulse
-    -
-    :::if{source="Kyogre" condition="spatk=(x / 18-19 / x)" theme=error}
-      **Surf x2 with Mystic Water and without rain is a 85.9% range.**
-    :::
-    :::if{source="Kyogre" condition="spatk=(x / 20-22 / x)" theme=error}
-      **Surf x2 with Mystic Water and without rain is a 89.5% range.**
-    :::
-    :::if{source="Kyogre" condition="spatk=(x / 23-26 / x)" theme=error}
-      **Surf x2 with Mystic Water and without rain is a 93.4% range.**
-    :::
-    :::if{source="Kyogre" condition="spatk=(x / 27-28 / x)" theme=error}
-      **Surf x2 with Mystic Water and without rain is a 96.9% range.**
-    :::
-    :::if{source="Kyogre" condition="spatk=(x / 29+ / 2-)" theme=error}
-      **Surf x2 with Mystic Water and without rain is a 99.6% range.**
-    :::
-    :::if{source="Kyogre" condition="spatk=(x / x / 3+)" theme=error}
-      **Surf x2 with Mystic Water and without rain is a 100% range.**
-    :::
+     - Earthquake
+  :::::
+  :::::pokemon[Whiscash]{info="Faster at 80+ Speed (7+/#/#)" infoColor=blue}
+     - Swords Dance
+     - Earthquake
+  :::::
+  :::::pokemon[Sealeo]
+     - Earthquake
+  :::::
+  :::::pokemon[Seaking]
+     - Earthquake
   :::::
 :::::::
-
-- Equip the Mystic Water on Kyogre if you have not already.
-- Teach Waterfall to Latias over Grass Knot (slot 4).
 - Fly to Route 126.
+  - Menu:
+    - Equip a Persim Berry on Groudon if it was used on Luvdisc
+    - Teach Waterfall over Dragon Breath to Latios (Slot 2)
 
-At the Pokémon Center, deposit Castform and Latias. PC heal Kyogre, but keep Marshtomp fainted.
+
+- At the Pokémon Center
+  - Organize menu: :info[(DO NOT HEAL MARSHTOMP)]{color=yellow}
+    - Deposit Groudon
+    - Groudon over Latios
+    - Deposit Castform
+    - Swap Marshtomp and Groudon
+
+
 
 :::::trainer[Ace Trainer Hope]
   :::pokemon[Froslass]
-    - Surf
+    - Overheat
   :::
 :::::
 
 :::::trainer[Expert Bryn]
   :::pokemon[Hitmontop]
-    - Surf
+    - Swords Dance 
+    - Earthquake
+
   :::
   :::pokemon[Throh]
-    - Origin Pulse / Surf
-    - (Surf if Endured)
-    ::damage[+0 Surf vs Throh with Mystic Water]{source="Kyogre" special=true movePower=90 stab=true level=46 evs=0 opponentStat=72 healthThreshold=163 otherPowerModifier=1.2 weatherBoosted=true theme=error}
+    - Earthquake (+ Smack Down)
 :::::
 
 :::::trainer[Ace Trainer Edgar]
   :::pokemon[Mawile]
-    - Surf
+    - Earthquake
   :::
 :::::
+
+:info[Grab Elixir if no more Leppas (straight ahead in right rock after battle)]{color=yellow}
 
 :::::trainer[Export Theodore]
   :::pokemon[Sawk]{info="Faster at 85+ Speed (16+ / 0+ / 0+)" infoColor=blue}
-    - Surf
+    :info[(Remember HP after)]{color=purple}
+    - Swords Dance
+    - Earthquake (+ Smack Down)
   :::
 :::::
 
-:::::trainer[Wally]
+-If took significant damage:
+  - Equip Persim Berry if needed
+  - Heal to full
+
+:::::trainer[Wally]{info="Heal as needed"}
   :::pokemon[Altaria]
-    - Calm Mind x2 :info[Only Calm Mind once if you're going for the Origin Pulse range on Gallade]{color=gray}
-    - _If you're worried about the +2 Surf range on Gallade:_
-      - Calm Mind
-    -
-    :::if{source="Kyogre" condition="speed=(5- / x / x)"}
-    - X Speed
-    :::
-    - (Heal if under ~30% HP)
-    - Ice Beam
+    - Swords Dance
+    - Smack Down
+    - Earthquake (x2) (Smack Down)
+
+    ::damage[Dragon Pulse]{source="Groudon" special=true movePower=85 stab=true level=46 opponentLevel=46 evs=0 opponentStat=69 offensive=false effectiveness=1 theme=error}
   :::
   :::pokemon[Roselia]
-    - Ice Beam
+    - Smack Down
+    - Earthquake (Overheat if < 3 Earthquakes)
   :::
   :::pokemon[Magneton]
-    - Ice Beam
-    - (Full Restore if paralyzed)
-    - Surf
+    - Earthquake
+   ::damage[Flash Cannon]{source="Groudon" special=true movePower=80 stab=true level=47 opponentLevel=46 evs=0 opponentStat=115 offensive=false effectiveness=1 theme=error}
   :::
   :::pokemon[Delcatty]
-    - Surf
+    - Earthquake
   :::
   :::pokemon[Mega Gallade]
-    - Surf or Origin Pulse
-    
-    ::damage[+2 Surf vs Mega Gallade with Mystic Water]{source="Kyogre" special=true movePower=90 stab=true level=47 evs=0 opponentStat=126 healthThreshold=123 otherPowerModifier=1.2 combatStages=2 theme=error}
-    
-    ::damage[+1 Origin Pulse vs Mega Gallade with Mystic Water]{source="Kyogre" special=true movePower=110 stab=true level=47 evs=0 opponentStat=126 healthThreshold=123 otherPowerModifier=1.2 combatStages=1 theme=error}
+    - Earthquake
   :::
 :::::
 
-Deposit Marshtomp and PC heal Kyogre. If you're low on Full Restores, consider buying a few.
+-Deposit Marshtomp and PC heal Groudon. 
+  - If you're low on Full Restores, consider buying a few.
+  - Equip Persim Berry if haven’t already done so!
 
 :::::::trainer[Elite Four Sidney]
-  :::::pokemon[Mightyena]
-    :::if{source="Kyogre" condition="speed=(31- / 27- / 8-)"}
-      - X Speed :info[Can delay to Shiftry if you have good Sp. Attack]{color=gray}
-      - _If Mightyena used Swagger_:
-        - X Sp. Attack
-        - Full Restore
-      - Surf
-    :::
-    :::if{source="Kyogre" condition="speed=~(31- / 27- / 8-)"}
-      - Calm Mind
-      - _If Mightyena used Swagger_:
-        - Full Heal
-      - Surf
+  :::::pokemon[Mightyena]{info="Only KO Mightyena at +3 Attack"}
+      -If good Atk +speed+ good def
+         - Fast sidney: Swords,(get swagger) if no swagger then swords again, (get swagger)
+         - Earthquake All
+
+    :::if{source="Groudon" condition="speed=(0-16/x/x)"}
+      - Swords Dance
+      - X Speed
     :::
   :::::
-  :::::pokemon[Shiftry]
-    - _If you didn't use Calm Mind or an X Sp. Attack on Mightyena_:
-      - X Sp. Attack :info[Shiftry will usually use Fake Out if you are at full HP.]{color=gray}
-    - Ice Beam
+  :::::pokemon[Shiftry]{info="Shiftry is faster if +1 Speed and Sun"}
+   :::if{source="Groudon" condition="atk=(x/15+/#)"}
+    - Earthquake
+   ::: 
+    - If +5 Attack, Earthquake
+    - If Sun
+      - Overheat
+    - Otherwise
+    
+    ![shftrychart](shiftrychart.png)  
 
-    ::damage[+0 Ice Beam vs Shiftry]{source="Kyogre" special=true movePower=90 level=48 evs=4 opponentStat=69 healthThreshold=154 effectiveness=2 theme=error}
+    -If miss Overheat, just Overheat again
+    
+    -If Overheat missed range, Smack Down, Earthquake
+    
+    -If Earthquake missed range, Smack Down, Overheat
+
+    ::damage[Leaf Blade ]{source="Groudon" special=false movePower=90 stab=true level=48 opponentLevel=50 evs=0 opponentStat=109 offensive=false effectiveness=2 theme=error}
   :::::
   :::::pokemon[Cacturne]
-    - Ice Beam
+    - Earthquake
   :::::
-  :::::pokemon[Sharpedo]{info="Faster at 105+ Speed without X-Speed (x / 28+ / 9+)" infoColor=blue}
-    - _If you're slower and Shiftry's Leaf Blade did ~65% of your HP:_
-      - Heal to full
-    - _If it's raining and you're at +1 Sp. Attack:_
-      - Surf
-    - _If it's raining_ or _you're at +1 Sp. Attack:_
-      - Surf (or Origin Pulse to avoid the range)
-
-      ::damage[+1 Surf vs Sharpedo with Mystic Water]{source="Kyogre" special=true movePower=90 stab=true level=48 evs=4 opponentStat=49 healthThreshold=134 otherPowerModifier=1.2 combatStages=1 effectiveness=0.5 theme=error}
+  :::::pokemon[Sharpedo]{info="Aqua Jet does 60 max" infoColor=blue}
+    - Earthquake
   :::::
   :::::pokemon[Absol]
-    :::if{source="Kyogre" condition="spatk=(x / 20+ / 0+)"}
-      - Surf
-    ::::
-    :::if{source="Kyogre" condition="spatk=~(x / 20+ / 0+)"}
-    - _If you're at +1 Sp. Attack:_
-      - Surf
-    - _Otherwise:_
-      - Origin Pulse
-    -
-    :::
+    - Earthquake
   :::::
 :::::::
 
-Heal to full.
+- Open your item menu:
+  - Heal to full
+  - Equip Red Orb on Groudon (bottom scroll)
 
 :::::::trainer[Phoebe]
   :::::pokemon[Dusclops]
-    :::if{source="Kyogre" condition="spatk=(27+ / 0+ / 0+)"}
-      - Surf
-
-      ::damage[+0 Surf vs Dusclops with Mystic Water]{source="Kyogre" special=true movePower=90 stab=true level=48 evs=4 opponentStat=126 healthThreshold=105 otherPowerModifier=1.2 weatherBoosted=true theme=error}
-    :::
-    :::if{source="Kyogre" condition="spatk=~(27+ / 0+ / 0+)"}
-       - Origin Pulse
-    :::
-  :::::
-  :::::pokemon[Dusknoir]
-    :::if{source="Kyogre" condition="spatk=(x / 10+ / 0+)"}
-      - _Risky (faster) play:_
-        - Origin Pulse
-      - _Otherwise (safer, always works)_:
-        - Calm Mind
-        - (Full Restore if paralyzed)
-        - Surf
-      -
-    :::
-    :::if{source="Kyogre" condition="spatk=~(x / 10+ / 0+)"}
-      - Calm Mind
-      - (Full Restore if paralyzed)
-      - Surf
-    :::
+    - Overheat
+       - If miss into Curse, spray and pray
   :::::
   :::::pokemon[Sableye]
-    - Surf
+    :::if{source="Groudon" condition="atk=(#/x/x)"}
+      - Swords Dance
+      - Earthquake
+    :::
+    :::if{source="Groudon" condition="atk=~(#/x/x)"}
+      - Earthquake
+    :::
   :::::
   :::::pokemon[Banette]
-    - Surf
+    - Earthquake
   :::::
   :::::pokemon[Banette]
-    :::if{source="Kyogre" condition="spatk=(x / 22+ / 0+)"}
-      - Surf
-    :::
-    :::if{source="Kyogre" condition="spatk=~(x / 22+ / 0+)"}
-      - _If it's raining, you're at +1 Sp. Attack, or you want to try the range:_
-        - Surf
-      - _Otherwise_:
-        - Origin Pulse
-      -
-
-      ::damage[+0 Surf vs Banette with Mystic Water]{source="Kyogre" special=true movePower=90 stab=true level=49 evs=5 opponentStat=73 healthThreshold=130 otherPowerModifier=1.2 theme=error}
-    :::
+    - Earthquake
+  :::::
+  :::::pokemon[Dusknoir]
+    - Swords Dance (Skip if used earlier)
+    - Earthquake
   :::::
 :::::::
 
-:::if{source="Kyogre" condition="speed=(22+ / 0+ / 0+)"}
-- Heal to full.
-::::
-:::if{source="Kyogre" condition="speed=~(22+ / 0+ / 0+)"}
-- If you're below 60% HP, heal to full.
-::::
-- _Safety Strat:_ Equip the Blue Orb.
-
-:::::::trainer[Glacia]{info="Without Blue Orb"}
+:::::::trainer[Glacia]
   :::::pokemon[Glalie]
-    :::if{source="Kyogre" condition="speed=(22+ / 0+ / 0+)"}
-      - Surf / Origin Pulse
-
-      ::damage[+0 Surf vs Glalie with Mystic Water]{source="Kyogre" special=true movePower=90 stab=true level=49 evs=5 opponentStat=92 healthThreshold=149 otherPowerModifier=1.2 weatherBoosted=true theme=error}
+    :::if{source="Groudon" condition="speed=(#/30-/10-)"}
+      - X Speed
+      - Swords Dance
+      - Earthquake
     :::
-    :::if{source="Kyogre" condition="speed=~(22+ / 0+ / 0+)"}
-      :info[_Slow strat to stall out Light Screen_]{color=gray}
-      - X Speed 
-      - Calm Mind x2
-      - _If you can survive another Crunch:_
-        - Leppa Berry Surf
-        - Heal to full
-      - _Otherwise:_
-        - Heal to full
-        - Leppa Berry Surf
-      - Surf
+    :::if{source="Groudon" condition="speed=~(#/30-/10-)"}
+      - Swords Dance
+      - Earthquake
     :::
   :::::
   :::::pokemon[Walrein]
-    :::if{source="Kyogre" condition="speed=(x / 3+ / 0+)"}
-      - _If you did the slow Glalie strat:_
-        - Surf x2
-      - _Otherwise:_
-        - Surf
-        - Calm Mind
-        :::if{source="Kyogre" condition="speed=(31- / 30- / 10-)"}
-        - X Speed
-        :::
-        - Surf
-      - 
-    :::
-    :::if{source="Kyogre" condition="speed=~(x / 3+ / 0+)"}
-      - _If you did the slow Glalie strat:_
-        - Surf
-        - Origin Pulse
-      - _Otherwise:_
-        - Surf
-        - Calm Mind
-        :::if{source="Kyogre" condition="speed=(31- / 30- / 10-)"}
-        - X Speed
-        :::
-        - Surf
-      - 
-    :::
+      - Earthquake (x2)
   :::::
   :::::pokemon[Froslass]
-    - (Calm Mind if it's not raining and you haven't already used it.)
-    - Surf
-    ::damage[+0 Origin Pulse vs Froslass with Mystic Water]{source="Kyogre" special=true movePower=110 stab=true level=50 evs=5 opponentStat=89 healthThreshold=138 otherPowerModifier=1.2 theme=error}
+    - Smack Down
   :::::
   :::::pokemon[Froslass]
-    - (Calm Mind if it's not raining and you haven't already used it.)
-    - Surf
-    ::damage[+0 Origin Pulse vs Froslass with Mystic Water]{source="Kyogre" special=true movePower=110 stab=true level=50 evs=5 opponentStat=89 healthThreshold=138 otherPowerModifier=1.2 theme=error}
+    - Smack Down
   :::::
   :::::pokemon[Glalie]
-    - (Calm Mind if it's not raining and you haven't already used it.)
-    - Surf
-    ::damage[+0 Origin Pulse vs Glalie with Mystic Water]{source="Kyogre" special=true movePower=110 stab=true level=50 evs=5 opponentStat=92 healthThreshold=149 otherPowerModifier=1.2 theme=error}
+    - Earthquake (+ Smack Down if Protect)
   :::::
 :::::::
 
-:::::::trainer[Glacia]{info="With Blue Orb"}
-  :::::pokemon[Glalie]
-    :::if{source="Kyogre" condition="speed=(31- / 30- / 10-)"}
-    - X Speed
-    :::
-    - Calm Mind x2
-    - _If Light Screen is up:_
-      - Leppa Berry Surf
-      - Calm Mind until Light Screen is about to fade :info[Light Screen lasts 5 turns.]{color=gray}
-    - Surf
-  :::::
-  :::::pokemon[Walrein]
-    - Surf
-  :::::
-  :::::pokemon[Froslass]
-    - Surf
-  :::::
-  :::::pokemon[Froslass]
-    - Surf
-  :::::
-  :::::pokemon[Glalie]
-    - Surf
-  :::::
-:::::::
-
-- Heal to full.
-- Leppa Berry Surf if you didn't in the previous fight.
+- Bag:
+  - Heal to full if needed
+  - Equip Silk Scarf
 
 :::::::trainer[Elite Four Drake]
-  :::::pokemon[Altaria]
-    - Calm Mind
-    :::if{source="Kyogre" condition="speed=(31- / 31- / 23-)"}
+  :::::pokemon[Altaria]{info="Heal when Dragon Pulse KOs" infoColor=blue}
+    :::if{source="Groudon" condition="speed=(16-/x/x)"}
     - X Speed
+    - Swords Dance x2
+    - If Cotton Guard used twice already
+      - Swords Dance 
+    - Smack Down (+ Earthquake)
     :::
-    - Ice Beam
-  :::::
-  :::::pokemon[Flygon]
-    - Surf
-  :::::
-  :::::pokemon[Salamence]
-    - Ice Beam
-  :::::
-  :::::pokemon[Flygon]
-    - Surf
+    :::if{source="Groudon" condition="speed=(16-/x/x) && atk=(#/11-/x)"}
+    - X Speed
+    - Swords Dance x3 
+    - Smack Down (+ Earthquake)
+    :::
+    :::if{source="Groudon" condition="speed=(17+/#/23-) && atk=(#/11-/x)"}
+    - 1 Cotton Guard used = X-Speed!
+    - Swords Dance x3
+    - Smack Down (+ Earthquake)
+    :::
+    :::if{source="Groudon" condition="speed=(17+/#/23-) && atk=~(#/11-/x)"}
+    - 2 Cotton Guards used = X-Speed + Swords Dance again!
+    - Swords Dance x2 (x3)
+    - Smack Down (+Earthquake)
+    :::
   :::::
   :::::pokemon[Kingdra]
-    - Ice Beam x2
+    - Earthquake
+  :::::
+  :::::pokemon[Flygon]{info="Boomburst does 71 max" infoColor=blue}
+    - (X Speed if haven't)
+    - Strength
+  :::::
+  :::::pokemon[Flygon]
+    - Strength
+  :::::
+  :::::pokemon[Salamence]
+    - Smack Down
   :::::
 :::::::
 
-Heal if below 75%.
+- Bag:
+  - Heal to full 
+  - Equip Silk Scarf if needed
 
 :::::::trainer[Champion Steven]
-  :::::pokemon[Skarmory]{info="Heal as needed"}
-    - Ice Beam
-    :::if{source="Kyogre" condition="speed=(13- / x / x)"}
+  :::::pokemon[Skarmory]{info="Heal as needed but can toxic again"}
+    - Swords Dance x2
+    :::if{source="Groudon" condition="speed=(13- / x / x)"}
     - X Speed
     :::
-    :::if{source="Kyogre" condition="spatk=(x / x / 23+)"}
-    - Calm Mind x2
-    :::
-    :::if{source="Kyogre" condition="spatk=~(x / x / 23+)"}
-    - Calm Mind x3 :info[Can skip one if you're going for ranges]{color=gray}
-    :::
-    - (Full Restore if dead after killing Skarmory or to avoid getting confused by Cradily)
-    - Surf
+    - Smack Down
+    - Full Restore
+    - Earthquake
   :::::
   :::::pokemon[Cradily]
-    - (Full Restore if poisoned or in yellow HP)
-    - _If at +2 Sp. Attack and it's raining:_
-      - Surf
-    - _If at +2 Sp. Attack and it's not raining:_
-      - Ice Beam
-    - _Otherwise (+3 Sp. Attack)_:
-      - Surf :info[Ice Beam always kills at +3]{color=gray}
-    -
-    ::damage[+2 Surf vs Cradily without Rain with Mystic Water]{source="Kyogre" special=true movePower=90 stab=true level=52 evs=6 opponentStat=136 healthThreshold=174 otherPowerModifier=1.2 combatStages=2 theme=error}
-    
-    ::damage[+2 Ice Beam vs Cradily]{source="Kyogre" special=true movePower=90 level=52 evs=6 opponentStat=136 healthThreshold=174 effectiveness=2 combatStages=2 theme=error}
-
-    ::damage[+3 Surf vs Cradily without Rain with Mystic Water]{source="Kyogre" special=true movePower=90 stab=true level=52 evs=6 opponentStat=136 healthThreshold=174 otherPowerModifier=1.2 combatStages=3 theme=error}
+    - Earthquake
   :::::
   :::::pokemon[Aggron]
-    - Ice Beam
-    - Surf
+    - Smack Down 
+    - Heal out of Bullet Punch range
+    :::if{source="Groudon" condition="def=(6-/x/x)" theme=error}
+     - Bullet Punch does 45-52 (54)
+    :::
+    :::if{source="Groudon" condition="def=(7-16/x/x)" theme=error}
+     - Bullet Punch does (43) 45-51 (52)
+    :::
+    :::if{source="Groudon" condition="def=(17-25/x/x)" theme=error}
+     - Bullet Punch does (42) 43-49 (51)
+    :::
+    :::if{source="Groudon" condition="def=(26+/2-/x)" theme=error}
+     - Bullet Punch does 42-48(49)
+    :::
+    :::if{source="Groudon" condition="def=(x/3-12/x)" theme=error}
+     - Bullet Punch does 40-46 (48)
+    :::
+    :::if{source="Groudon" condition="def=(x/13-21/x)" theme=error}
+     - Bullet Punch does 39-45 (46)
+    :::
+    :::if{source="Groudon" condition="def=(x/22+/4-)" theme=error}
+     - Bullet Punch does 37-43 (45)
+    :::
+    :::if{source="Groudon" condition="def=(x/x/5-16)" theme=error}
+     - Bullet Punch does 36-42 (43)
+    :::
+    :::if{source="Groudon" condition="def=(x/x/17-29)" theme=error}
+     - Bullet Punch does (34) 36-40 (42)
+    :::
+    :::if{source="Groudon" condition="def=(x/x/30+)" theme=error}
+     - Bullet Punch does (33) 34-39 (40)
+    :::
+    - Earthquake
   :::::
-  :::::pokemon[Claydol]
-    - Surf
+  :::::pokemon[Claydol]{info="Earth Power does 76 max, has Reflect" infoColor=blue}
+    - Strength
   :::::
   :::::pokemon[Armaldo]
-    - (Heal if in Bullet Punch range)
-    - Surf
+    - Earthquake
   :::::
   :::::pokemon[Mega Metagross]
-    - _If at +2 Sp. Attack:_
-      - Origin Pulse (or Surf)
-    - _Otherwise:_
-      - Surf
-    -
-    ::damage[+2 Origin Pulse vs Mega Metagross without Rain with Mystic Water]{source="Kyogre" special=true movePower=110 stab=true level=53 evs=6 opponentStat=144 healthThreshold=172 otherPowerModifier=1.2 combatStages=2 theme=error}
-
-    ::damage[+2 Surf vs Mega Metagross without Rain with Mystic Water]{source="Kyogre" special=true movePower=90 stab=true level=53 evs=6 opponentStat=144 healthThreshold=172 otherPowerModifier=1.2 combatStages=2 theme=error}
-
-    ::damage[+3 Surf vs Mega Metagross without Rain with Mystic Water]{source="Kyogre" special=true movePower=90 stab=true level=53 evs=6 opponentStat=144 healthThreshold=172 otherPowerModifier=1.2 combatStages=3 theme=error}
-
-    ::damage[Metagross' Bullet Punch]{source="Kyogre" offensive=false movePower=40 stab=true level=53 evs=9 opponentLevel=59 opponentStat=185 effectiveness=0.5}
+    - Earthquake
   :::::
 :::::::
 
 :::::::trainer[Brendan 5]
   :::::pokemon[Swellow]
-    - Calm Mind x1000
+    -  Smack Down (x2)
+  :::::
+  :::::pokemon[Wailord]
+    -  Swords Dance x4 - 5
   :::::
 :::::::

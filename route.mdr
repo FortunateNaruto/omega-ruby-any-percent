@@ -39,6 +39,8 @@
 ::: 
 
 :::card
+  Set your console date and time so it’s May 6, 2017 after Weather Institute.
+
   Minimum stats at Lv. 6:
   - Attack: **14** (_13 is runnable, but not ideal._)
   - Defense: **10**
@@ -1339,6 +1341,7 @@ Catch Groudon with the Master Ball.
     :::if{source="Groudon" condition="def=(x/x/30+)" theme=error}
      - Bullet Punch does (33) 34-39 (40)
     :::
+    ::damage[Metagross' Bullet Punch -1]{source="Groudon" offensive=false movePower=40 stab=true level=53 evs=9 opponentLevel=59 opponentStat=185 combatStages=-1 effectiveness=1 otherModifier=1.3}
     - Earthquake
   :::::
   :::::pokemon[Claydol]{info="Earth Power does 76 max, has Reflect" infoColor=blue}

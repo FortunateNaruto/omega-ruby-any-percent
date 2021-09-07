@@ -108,7 +108,7 @@ Potion if in Rock Tomb range.
 
 Talk to the sailor before Rusturf Tunnel.
 :::if{source="Mudkip" condition="speed=(24+/ 12+ / 4+)"}
- ::variable{name="rtskip" type="boolean" title="Rock Tomb Skip, only valiable at (29+ / 12+ / 4+) IV Speed"}
+ ::variable{name="rtskip" type="boolean" title="Rock Tomb Skip, only valiable at (29+ / 12+ / 4+) IV Speed" defaultValue=0}
 :::
 Immediately after entering Rusturf Tunnel:
  :::if{source="Mudkip" condition=$rtskip}
@@ -238,7 +238,7 @@ After exiting the gym, head north to Granite Cave.
 - Super Repel.
 
 :::if{source="Mudkip" condition="speed=(x/12+/#)"}
- ::variable{name="ppskip" type="boolean" title="-Can Skip PP UP"}
+ ::variable{name="ppskip" type="boolean" title="-Can Skip PP UP" defaultValue=0}
 :::
 
 :::::trainer[Team Magma Grunt]
